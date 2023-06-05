@@ -29,15 +29,17 @@ pipeline{
                             type: 'war'
                        ]
                   ], 
-                  credentialsId: 'nexus5 ', 
+                  credentialsId: 'nexus3 ', 
                   groupId: 'in.javahome', 
-                  nexusUrl: '52.91.174.77:8081', 
-                  nexusVersion: 'nexus5', 
+                  nexusUrl: '172.31.31.163:8081', 
+                  nexusVersion: 'nexus3', 
                   protocol: 'http', 
                   repository: 'sample-releases', 
                   version: '8.2.0'  
               }
             }
+                    
+            
         stage('Build Docker Image'){
             steps{
                  sh 'docker build -t talarisreenivas/spring-boot-mongo .'
